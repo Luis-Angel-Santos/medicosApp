@@ -24,6 +24,7 @@ export class CrearPacienteComponent {
 
   altaPaciente(){
     Swal.fire({
+      icon: 'question',
       title: '¿Registrar paciente?',
       showCancelButton: true,
       confirmButtonText: 'Registrar',
@@ -34,12 +35,12 @@ export class CrearPacienteComponent {
       if (result.isConfirmed) {
         this.pacientesService.altaPaciente(this.paciente)
           .subscribe({
-              next: resul => { this.router.navigate(['/dashboard/nuevo-historial']); },
-              error: err => { console.log(err); }
+              next: resul => { 
+                Swal.fire('Registrado', 'Paciente registrado correctamente', 'success')
+                  .then(() => this.router.navigate(['/dashboard/nuevo-historial']));
+              },
+              error: err => { Swal.fire('Opps', 'Parece que hubo un problema', 'error') }
           });
-        Swal.fire('Registrado', 'Paciente registrado correctamente', 'success')
-      } else if (result.isDenied) {
-        Swal.fire('Opps', 'Parece que hubo un problema', 'error')
       }
     })
     

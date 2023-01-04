@@ -37,12 +37,24 @@ export class PacientesService {
 
   constructor(private http: HttpClient) { }
 
+  //registrar un paciente nuevo
   altaPaciente(paciente: Pacientes){
     return this.http.post(`${this.url}AltaPaciente.php`, JSON.stringify(paciente));
   }
 
+  //obtener todos los pacientes registrados
   obtenerPacientes():Observable<Pacientes[]>{
     return this.http.get<Pacientes[]>(`${this.url}ObtenerPacientes.php`);
+  }
+
+  //obtener solo un paciente mediante su id
+  obtenerUnPaciente(idpaciente: number){
+    return this.http.get(`${this.url}SeleccionarPaciente.php?idpaciente=${idpaciente}`);
+  }
+
+  //editar datos de un paciente
+  editarPaciente(paciente: Pacientes){
+    return this.http.post(`${this.url}EditarPaciente.php`, JSON.stringify(paciente));
   }
 
 }

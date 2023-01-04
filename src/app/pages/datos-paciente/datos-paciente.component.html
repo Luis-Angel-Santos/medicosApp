@@ -35,7 +35,7 @@
                                         <td>{{paciente.edadpaciente}}</td>
                                         <td>{{paciente.telpaciente}}</td>
                                         <td>{{paciente.dirpaciente}}</td>
-                                        <td><a  class="btn btn-warning" data-toggle="modal" data-target=".example2-modal-lg"><i class="fa fa-edit"></i></a></td>
+                                        <td><a (click)="seleccionarPaciente(paciente.idpaciente)" class="btn btn-warning" data-toggle="modal" data-target=".example2-modal-lg"><i class="fa fa-edit"></i></a></td>
                                         <td><a class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
                                     </tr>                                        
                                 </tbody>
@@ -65,34 +65,34 @@
                                     <div class="row p-t-20">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="control-label">Nombre completo</label>
-                                                <input type="text"  class="form-control"  placeholder="Brenda Torres" >
+                                                <label class="control-label"><i class="fa-solid fa-user"></i> Nombre completo</label>
+                                                <input type="text" name="paciente.nompaciente" [(ngModel)]="paciente.nompaciente" class="form-control"  placeholder="Brenda Torres" >
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="control-label">Edad</label>
-                                                <input type="text"  class="form-control"   placeholder="31 años">
+                                                <label class="control-label"><i class="fa-solid fa-calendar-days"></i> Edad</label>
+                                                <input type="text" name="paciente.edadpaciente" [(ngModel)]="paciente.edadpaciente" class="form-control"  placeholder="31 años">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Teléfono</label>
-                                                <input type="text"   class="form-control"   placeholder="(999) 999-9999">
+                                                <label><i class="fa-solid fa-phone"></i> Teléfono</label>
+                                                <input type="text" name="paciente.telpaciente" [(ngModel)]="paciente.telpaciente"  class="form-control"   placeholder="(999) 999-9999">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="control-label">Dirección</label>
-                                                <input type="text"  class="form-control"   placeholder="Av. Venustiano carranza 43, Atlacomulco, Edo. De Méx.">
+                                                <label class="control-label"><i class="fa-solid fa-location-dot"></i> Dirección</label>
+                                                <input type="text" name="paciente.dirpaciente" [(ngModel)]="paciente.dirpaciente" class="form-control"   placeholder="Av. Venustiano carranza 43, Atlacomulco, Edo. De Méx.">
                                             </div>
                                         </div>
                                     </div>                                     
                                 </div>
                                 <div class="form-actions">
-                                    <button class="btn btn-success"> <i class="fa fa-check" ></i> Guardar </button> 
+                                    <button (click)="editarPaciente()" class="btn btn-success"> <i class="fa fa-check" ></i> Guardar </button> 
                                 </div>
                         </div>
                         </form>
