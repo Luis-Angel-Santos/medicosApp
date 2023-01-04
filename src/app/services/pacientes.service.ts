@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Pacientes } from '../interfaces/pacientes.interface';
 
 @Injectable({
@@ -38,6 +39,10 @@ export class PacientesService {
 
   altaPaciente(paciente: Pacientes){
     return this.http.post(`${this.url}AltaPaciente.php`, JSON.stringify(paciente));
+  }
+
+  obtenerPacientes():Observable<Pacientes[]>{
+    return this.http.get<Pacientes[]>(`${this.url}ObtenerPacientes.php`);
   }
 
 }

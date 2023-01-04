@@ -29,22 +29,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr >
-                                        <td>idpaciente</td>
-                                        <td>nompaciente</td>
-                                        <td>edadpaciente</td>
-                                        <td>telpaciente</td>
-                                        <td>dirpaciente</td>
-                                        <td> 
-                                            <a  class="btn btn-warning" data-toggle="modal" data-target=".example2-modal-lg"><i class="fa fa-edit"></i></a>
-                                        </td>
-                                        <td> 
-                                            <a class="btn btn-success"><i class="fa fa-trash"></i></a>
-                                        </td>
+                                    <tr *ngFor="let paciente of pacientes">
+                                        <td>{{paciente.idpaciente}}</td>
+                                        <td>{{paciente.nompaciente}}</td>
+                                        <td>{{paciente.edadpaciente}}</td>
+                                        <td>{{paciente.telpaciente}}</td>
+                                        <td>{{paciente.dirpaciente}}</td>
+                                        <td><a  class="btn btn-warning" data-toggle="modal" data-target=".example2-modal-lg"><i class="fa fa-edit"></i></a></td>
+                                        <td><a class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
                                     </tr>                                        
                                 </tbody>
                             </table>
-
                         </div>                            
                     </div>
                 </div>
