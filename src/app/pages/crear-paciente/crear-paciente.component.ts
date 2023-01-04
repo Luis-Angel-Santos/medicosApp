@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PacientesService } from '../../services/pacientes.service';
+import { Pacientes } from '../../interfaces/pacientes.interface';
 
 @Component({
   selector: 'app-crear-paciente',
@@ -8,7 +9,13 @@ import { PacientesService } from '../../services/pacientes.service';
 })
 export class CrearPacienteComponent {
 
-  paciente: any = {};
+  paciente: Pacientes = {
+    idpaciente: '',
+    nompaciente: '',
+    edadpaciente: '',
+    telpaciente: '',
+    dirpaciente: ''
+  };
 
   constructor(public pacientesService: PacientesService){}
 
