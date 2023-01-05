@@ -60,9 +60,38 @@ export class DatosPacienteComponent implements OnInit{
             }
         });
       }
-    })
+    });
+  }
 
-    
+  eliminarPaciente(idpaciente: any){
+
+    Swal.fire({
+      icon: 'question',
+      title: '¿Esta Seguro?',
+      text: 'Esta acción no se puede revertir',
+      showCancelButton: true,
+      confirmButtonText: 'Eliminar',
+      confirmButtonColor: 'red',
+      cancelButtonText: `Cancelar`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.pacientesService.eliminarPaciente(idpaciente)
+          .subscribe((resp: any) => {
+            if(resp['resultado'] == 'OK'){
+              Swal.fire({
+                icon: 'success',
+                title: 'Paciente Eliminado',
+                text: 'El paciente fue eliminado correctamente',
+                showConfirmButton: false,
+                timer: 2000
+              });
+            this.obtenerPacientes();
+            }else {
+              Swal.fire('Opps', 'Parece que hubo un problema', 'error')
+            }
+        });
+      }
+    });
   }
 
 }
