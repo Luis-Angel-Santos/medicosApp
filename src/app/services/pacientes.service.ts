@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Historial } from '../interfaces/historial.interface';
 import { Pacientes } from '../interfaces/pacientes.interface';
 
 @Injectable({
@@ -60,6 +61,10 @@ export class PacientesService {
   //eliminar un paciente mediante su id
   eliminarPaciente(idpaciente: number){
     return this.http.get(`${this.url}EliminarPaciente.php?idpaciente=${idpaciente}`);
+  }
+
+  crearHistorial(nuevoHistorial: Historial){
+    return this.http.post(`${this.url}NuevoHistorial.php`, JSON.stringify(nuevoHistorial));
   }
 
 }
