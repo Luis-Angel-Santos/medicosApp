@@ -11,5 +11,5 @@ export interface Historial{
     citahistorial: string;
     idpaciente: string;
     fechahistorial: string;
-    diagnostic: string;
+    diagnostico: string;
 }

@@ -7,34 +7,34 @@
         </div>
         <div class="row">            
             <div class="col-12">
-                <form (ngSubmit)="submit()" [formGroup]="multiBloque">
+                <form (ngSubmit)="registrarHistorial()" [formGroup]="multiBloque">
                     <div *ngIf="bloque == 1" formGroupName="datosPaciente">
                         <div class="form-group row" >
                             <label for="example-text-input" class="col-2 col-form-label">Nombre</label>
                             <div class="col-5">
-                                <select class="form-control" formControlName="nombre">
-                                        <option *ngFor="let paciente of pacientes">{{paciente.nompaciente}}</option>
+                                <select [(ngModel)]="nuevoHistorial.idpaciente" class="form-control" formControlName="nombre">
+                                        <option value="{{paciente.idpaciente}}" *ngFor="let paciente of pacientes">{{paciente.nompaciente}}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="example-search-input" class="col-2 col-form-label">Peso</label>
                             <div class="col-4">
-                                <input class="form-control" type="text" formControlName="peso">
+                                <input class="form-control" type="text" [(ngModel)]="nuevoHistorial.pesohistorial" formControlName="peso">
                             </div>
                             <label for="example-search-input" class="col-2 col-form-label">Talla</label>
                             <div class="col-4">
-                                <input class="form-control" type="text" formControlName="talla">
+                                <input class="form-control" type="text" [(ngModel)]="nuevoHistorial.tallahistorial" formControlName="talla">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="example-search-input" class="col-2 col-form-label">FrC</label>
                             <div class="col-4">
-                                <input class="form-control" type="text" formControlName="frc">
+                                <input class="form-control" type="text" [(ngModel)]="nuevoHistorial.fchistorial" formControlName="frc">
                             </div>
                             <label for="example-search-input" class="col-2 col-form-label">Temperatura</label>
                             <div class="col-4">
-                                <input class="form-control" type="text" formControlName="temperatura">
+                                <input class="form-control" type="text" [(ngModel)]="nuevoHistorial.frhistorial" formControlName="temperatura">
                             </div>
                         </div>
                     </div>                    
@@ -42,53 +42,48 @@
                         <div class="form-group row">
                             <label for="example-search-input" class="col-2 col-form-label">Ah</label>
                             <div class="col-10">
-                                <input class="form-control" type="text" formControlName="ah">
+                                <input class="form-control" type="text" [(ngModel)]="nuevoHistorial.ahhistorial" formControlName="ah">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="example-search-input" class="col-2 col-form-label">Apnp</label>
                             <div class="col-10">
-                                <input class="form-control" type="text" formControlName="apnp">
+                                <input class="form-control" type="text" [(ngModel)]="nuevoHistorial.apnphistorial" formControlName="apnp">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="example-search-input" class="col-2 col-form-label">Hemotipo</label>
                             <div class="col-10">
-                                <input class="form-control" type="text" formControlName="hemotipo">
+                                <input class="form-control" type="text" [(ngModel)]="nuevoHistorial.hemotipohistorial" formControlName="hemotipo">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="example-search-input" class="col-2 col-form-label">Alergias</label>
                             <div class="col-10">
-                                <input class="form-control" type="text" formControlName="alergias">
+                                <input class="form-control" type="text" [(ngModel)]="nuevoHistorial.alergiashistorial" formControlName="alergias">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>App</label>
-                            <textarea class="form-control" rows="4" formControlName="app"></textarea>
+                            <textarea class="form-control" rows="4" [(ngModel)]="nuevoHistorial.apphistorial" formControlName="app"></textarea>
                         </div>
                 </div>
                 <div *ngIf="bloque == 3" formGroupName="datosPaciente3">
                     <div class="form-group">
                         <label for="example-search-input" class="col-2 col-form-label">Próxima cita</label>
                         <div class="col-4">
-                            <input type="date" class="form-control" placeholder="dd/mm/yyyy" formControlName="cita">
+                            <input type="date" class="form-control" placeholder="dd/mm/yyyy" [(ngModel)]="nuevoHistorial.citahistorial" formControlName="cita">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="example-search-input" class="col-2 col-form-label">Diagnóstico</label>                        
-                        <textarea class="form-control" rows="8" formControlName="diagnostico"></textarea>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-10">
-                            <input class="form-control" type="text" disabled>
-                        </div>
+                        <textarea class="form-control" rows="8" [(ngModel)]="nuevoHistorial.diagnostico" formControlName="diagnostico"></textarea>
                     </div>
                 </div>    
                 <a *ngIf="bloque != 1" (click)="atras()" style="margin-right: 15px; color: white;" class="btn btn-primary">Atras</a>
-                <button *ngIf="bloque != 3" type="submit" class="btn btn-primary">Siguiente</button>
-                <button *ngIf="bloque == 3" class="btn btn-success">Registrar</button>               
+                <a *ngIf="bloque != 3" (click)="submit()" style="color: white;" class="btn btn-primary">Siguiente</a>
+                <button *ngIf="bloque == 3" type="submit" class="btn btn-success">Registrar</button>               
                 </form>
             </div>
-        </div>            
+        </div>         
 </div>
