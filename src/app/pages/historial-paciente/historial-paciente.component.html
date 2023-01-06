@@ -17,10 +17,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr >
-                        <td>nompaciente</td>                                                                                        
+                    <tr *ngFor="let historial of historiales">
+                        <td>{{historial.nompaciente}}</td>                                                                                        
                         <td> 
-                            <a class="btn btn-success" ><i class="fa fa-eye"></i></a>
+                            <a (click)="verExpediente(historial.idpaciente)" class="btn btn-success" ><i class="fa fa-eye"></i></a>
                         </td>
                     </tr>                                        
                 </tbody>

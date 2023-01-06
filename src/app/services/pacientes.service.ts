@@ -63,8 +63,14 @@ export class PacientesService {
     return this.http.get(`${this.url}EliminarPaciente.php?idpaciente=${idpaciente}`);
   }
 
+  //crear nuevo historial de un paciente
   crearHistorial(nuevoHistorial: Historial){
     return this.http.post(`${this.url}NuevoHistorial.php`, JSON.stringify(nuevoHistorial));
+  }
+
+  //obtener todos los historiales de los pacientes
+  obtenerHistoriales(){
+    return this.http.get(`${this.url}ObtenerHistoriales.php`);
   }
 
 }
