@@ -23,12 +23,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr >
-                                        <td>iddoctor</td>
-                                        <td>nomdoctor</td>
-                                        <td>teldoctor</td>
-                                        <td>cedoctor</td>
-                                        <td>espedoctor</td>
+                                    <tr *ngFor="let doctor of doctores">
+                                        <td>{{doctor.iddoctor}}</td>
+                                        <td>{{doctor.nomdoctor}}</td>
+                                        <td>{{doctor.teldoctor}}</td>
+                                        <td>{{doctor.cedoctor}}</td>
+                                        <td>{{doctor.espedoctor}}</td>
                                         <td> 
                                             <a  class="btn btn-warning" data-toggle="modal" data-target=".example2-modal-lg"><i class="fa fa-edit"></i></a>
                                         </td>                                        
