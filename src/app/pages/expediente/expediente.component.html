@@ -33,7 +33,7 @@
                                             <a (click)="seleccionarExpediente(datos.idhistorial)" class="btn btn-success" data-toggle="modal" data-target=".example4-modal-lg"><i class="fa fa-eye"></i></a>
                                         </td>
                                         <td> 
-                                            <a style="color:#fff" class="btn btn-primary" ><i class="fa fa-print"></i> Receta</a>
+                                            <a (click)="generarRecetaPDF(datos.idhistorial)" style="color:#fff" class="btn btn-primary" ><i class="fa fa-print"></i> Receta</a>
                                         </td>                                        
                                     </tr>
                                 </tbody>

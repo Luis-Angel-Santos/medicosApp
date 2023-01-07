@@ -26,4 +26,10 @@ export class DoctoresService {
   editarDoctor(doctor: Doctor){
     return this.http.post(`${this.url}EditarDoctor.php`, JSON.stringify(doctor));
   }
+
+  //imprimir receta del paciente
+  generarRecetaPDF(idHistorial: number){
+    window.open(`${this.url}extensiones/tcpdf/pdf/rec.php?idhistorial=${idHistorial}`, '_blank');
+  }
+
 }

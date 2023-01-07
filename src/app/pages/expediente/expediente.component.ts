@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DoctoresService } from 'src/app/services/doctores.service';
 import Swal from 'sweetalert2';
 import { PacientesService } from '../../services/pacientes.service';
 
@@ -16,7 +17,8 @@ export class ExpedienteComponent implements OnInit{
   mostrar: boolean = false;
 
   constructor(public pacientesService: PacientesService,
-              private activateRoute: ActivatedRoute){
+              private activateRoute: ActivatedRoute,
+              public doctoresService: DoctoresService){
     this.activateRoute.params.subscribe( params => {
       this.expedientes = params['id'];
     });
@@ -69,6 +71,10 @@ export class ExpedienteComponent implements OnInit{
         });
       }
     });
+  }
+
+  generarRecetaPDF(idHistorial: any){
+    this.doctoresService.generarRecetaPDF(idHistorial);
   }
 
 }
