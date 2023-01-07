@@ -12,7 +12,7 @@
                         <div class="card-body">
                             <table id="demo-foo-accordion" class="table m-b-0 toggle-arrow-tiny">
                                 <thead>
-                                    <tr >
+                                    <tr>
                                          <th> Nombre </th>
                                         <th data-toggle="true"> Fecha Elaborada</th>
                                         <th data-toggle="true"> Fecha Citada</th>
@@ -22,10 +22,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr >
-                                    <td>nompaciente</td>
-                                        <td>fechahistorial</td>
-                                        <td>citahistorial</td>
+                                    <tr *ngFor="let datos of datosExpediente">
+                                    <td>{{datos.nompaciente}}</td>
+                                        <td>{{datos.fechahistorial}}</td>
+                                        <td>{{datos.citahistorial}}</td>
                                         <td> 
                                             <a class="btn btn-warning" data-toggle="modal" data-target=".example3-modal-lg"><i class="fa fa-edit"></i></a>
                                         </td>

@@ -73,4 +73,9 @@ export class PacientesService {
     return this.http.get(`${this.url}ObtenerHistoriales.php`);
   }
 
+  //obtener el expediente de un paciente mediante su id
+  obtenerExpediente(idpaciente: number){
+    return this.http.get(`${this.url}ObtenerExpedientes.php?idpaciente=${idpaciente}`);
+  }
+
 }
