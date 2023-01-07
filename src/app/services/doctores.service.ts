@@ -13,8 +13,17 @@ export class DoctoresService {
   constructor(private http: HttpClient) { }
 
   //obtener datos de los doctores
-  obtenerDoctor():Observable<Doctor[]>{
-    return this.http.get<Doctor[]>(`${this.url}ObtenerDoctores.php`);
+  obtenerDoctor(){
+    return this.http.get(`${this.url}ObtenerDoctores.php`);
   }
   
+  //seleccionar doctor mediante su id
+  seleccionarDoctor(idDoctor: number){
+    return this.http.get(`${this.url}SeleccionarDoctor.php?iddoctor=${idDoctor}`);
+  }
+
+  //editar los datos de un doctor
+  editarDoctor(doctor: Doctor){
+    return this.http.post(`${this.url}EditarDoctor.php`, JSON.stringify(doctor));
+  }
 }

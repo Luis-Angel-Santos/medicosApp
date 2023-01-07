@@ -30,7 +30,7 @@
                                         <td>{{doctor.cedoctor}}</td>
                                         <td>{{doctor.espedoctor}}</td>
                                         <td> 
-                                            <a  class="btn btn-warning" data-toggle="modal" data-target=".example2-modal-lg"><i class="fa fa-edit"></i></a>
+                                            <a (click)="seleccionarDoctor(doctor.iddoctor)" class="btn btn-warning" data-toggle="modal" data-target=".example2-modal-lg"><i class="fa fa-edit"></i></a>
                                         </td>                                        
                                     </tr>                                        
                                 </tbody>
@@ -61,7 +61,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Nombre completo</label>
-                                                <input type="text"  class="form-control"  placeholder="Pedro Pablo" >
+                                                <input type="text" name="doctor.nomdoctor" [(ngModel)]="doctor.nomdoctor" class="form-control"  placeholder="Pedro Pablo" >
                                             </div>
                                         </div>
                                     </div>
@@ -69,25 +69,25 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Teléfono</label>
-                                                <input type="text"   class="form-control"   placeholder="(999) 999-9999">
+                                                <input type="text" name="doctor.teldoctor" [(ngModel)]="doctor.teldoctor"  class="form-control"   placeholder="(999) 999-9999">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Cedula Profesional</label>
-                                                <input type="text"  class="form-control"   placeholder="Profesional">
+                                                <input type="text" name="doctor.cedoctor" [(ngModel)]="doctor.cedoctor" class="form-control"   placeholder="Profesional">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Especialidad</label>
-                                                <input type="text"  class="form-control" placeholder="Especialidad">
+                                                <input type="text" name="doctor.espedoctor" [(ngModel)]="doctor.espedoctor" class="form-control" placeholder="Especialidad">
                                             </div>
                                         </div>
                                     </div>                                       
                                 </div>
                                 <div class="form-actions">
-                                    <button class="btn btn-success"> <i class="fa fa-check" ></i> Guardar </button> 
+                                    <button (click)="editarDoctor()" class="btn btn-success"> <i class="fa fa-check" ></i> Guardar </button> 
                                 </div>
                         </div>
                         </form>
