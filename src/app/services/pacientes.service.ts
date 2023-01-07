@@ -9,7 +9,7 @@ import { Pacientes } from '../interfaces/pacientes.interface';
 })
 export class PacientesService {
 
-  url: any = 'http://localhost/api/';
+  url: string = 'http://localhost/api/';
   public menu = [
     {
       titulo: 'Doctores',
@@ -73,9 +73,19 @@ export class PacientesService {
     return this.http.get(`${this.url}ObtenerHistoriales.php`);
   }
 
-  //obtener el expediente de un paciente mediante su id
+  //obtener el expediente del paciente mediante su id
   obtenerExpediente(idpaciente: number){
     return this.http.get(`${this.url}ObtenerExpedientes.php?idpaciente=${idpaciente}`);
+  }
+
+  //seleccionar expediente del paciente mediante el id del historial
+  seleccionarExpediente(idhistorial: number){
+    return this.http.get(`${this.url}SeleccionarExpediente.php?idhistorial=${idhistorial}`);
+  }
+
+  //editar expediente de un paciente
+  editarExpediente(expediente: any){
+    return this.http.post(`${this.url}EditarExpediente.php`, JSON.stringify(expediente));
   }
 
 }
