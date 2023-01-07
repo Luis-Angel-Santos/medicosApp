@@ -81,9 +81,9 @@
                                             </div>
                                         </div>                          
                                         <div class="form-group row">
-                                            <button class=" btn btn-outline-primary">Mostrar Mas Datos</button>
+                                            <button (click)="mostrar =! mostrar" type="button" class=" btn btn-outline-primary">Mostrar Mas Datos</button>
                                         </div>
-                                        <div >
+                                        <div *ngIf="mostrar">
                                             <div class="form-group row">
                                                 <label for="example-search-input" class="col-10 col-form-label">ANTECEDENTES HEREDOFAMILIARES</label>
                                                 <div class="col-12">
@@ -181,9 +181,9 @@
                                             </table>                                                
                                         </div>
                                         <div class="form-group row">
-                                            <button type="button" class=" btn btn-outline-primary">Mostrar Mas Datos</button>
+                                            <button (click)="mostrar =! mostrar" type="button" class=" btn btn-outline-primary">Mostrar Mas Datos</button>
                                         </div>
-                                        <div >                                                
+                                        <div *ngIf="mostrar">                                                
                                             <div class="form-group row">
                                                 <label for="example-text-input" class="col-12 col-form-label">ANTECEDENTES HEREDOFAMILIARES</label>
                                                 <div class="col-12">

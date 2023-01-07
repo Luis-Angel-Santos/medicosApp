@@ -13,6 +13,7 @@ export class ExpedienteComponent implements OnInit{
   expedientes: any = {};
   datosExpediente: any[] = [];
   public expediente: any = {};
+  mostrar: boolean = false;
 
   constructor(public pacientesService: PacientesService,
               private activateRoute: ActivatedRoute){
