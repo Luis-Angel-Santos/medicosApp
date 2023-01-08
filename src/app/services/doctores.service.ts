@@ -32,4 +32,10 @@ export class DoctoresService {
     window.open(`${this.url}extensiones/tcpdf/pdf/rec.php?idhistorial=${idHistorial}`, '_blank');
   }
 
+  //cerrar sesion
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('email');
+  }
+
 }
