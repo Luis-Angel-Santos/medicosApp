@@ -7,10 +7,12 @@ import { ExpedienteComponent } from './expediente/expediente.component';
 import { HistorialPacienteComponent } from './historial-paciente/historial-paciente.component';
 import { PagesComponent } from './pages.component';
 import { NuevoHistorialComponent } from './nuevo-historial/nuevo-historial.component';
+import { AuthGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
     { 
         path: 'dashboard', 
+        canActivate: [AuthGuard],
         component: PagesComponent,
         children: [
             { path: 'crear-paciente', component: CrearPacienteComponent },

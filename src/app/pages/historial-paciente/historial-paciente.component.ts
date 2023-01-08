@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PacientesService } from '../../services/pacientes.service';
-import { Historial } from '../../interfaces/historial.interface';
 import { Router } from '@angular/router';
 
 @Component({
