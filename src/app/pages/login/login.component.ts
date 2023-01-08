@@ -38,7 +38,8 @@ export class LoginComponent implements OnInit{
             timer: 2000,
           }).then((resul)=> {
             localStorage.setItem('email', this.login.get('email').value);
-            this.router.navigate(['/dashboard/datos-paciente']);
+            this.router.navigate(['/dashboard/datos-paciente'])
+              .then(() => location.reload());
           });
         }else{
           Swal.fire({
@@ -46,7 +47,7 @@ export class LoginComponent implements OnInit{
             text: `Parece que ocurrio un problema: ${resp[0]}`,
             icon: 'error',
             showConfirmButton: false,
-            timer: 3000,
+            timer: 2000,
           });
           localStorage.removeItem('email');
         }
