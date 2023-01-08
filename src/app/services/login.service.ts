@@ -17,8 +17,6 @@ export class LoginService {
       .pipe(map((Users: any) => {
         this.setToken(Users[0].name);
         this.nombre.emit(true);
-        console.log(Users);
-        
         return Users;
       }
     ));
