@@ -10,6 +10,7 @@ import { HistorialPacienteComponent } from './historial-paciente/historial-pacie
 import { NuevoHistorialComponent } from './nuevo-historial/nuevo-historial.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FiltrarTablaPipe } from '../pipes/filtrar-tabla.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DatosPacienteComponent,
     ExpedienteComponent,
     HistorialPacienteComponent,
-    NuevoHistorialComponent
+    NuevoHistorialComponent,
+    FiltrarTablaPipe,
   ],
   imports: [
     CommonModule,

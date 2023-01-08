@@ -12,6 +12,7 @@ export class DatosPacienteComponent implements OnInit{
 
   pacientes: Pacientes[] = [];
   paciente: any = {};
+  filtrarNombre: any = '';
 
   constructor(public pacientesService: PacientesService){}
   
