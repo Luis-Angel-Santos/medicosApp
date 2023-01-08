@@ -11,6 +11,7 @@ import { NuevoHistorialComponent } from './nuevo-historial/nuevo-historial.compo
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FiltrarTablaPipe } from '../pipes/filtrar-tabla.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FiltrarTablaPipe } from '../pipes/filtrar-tabla.pipe';
     CommonModule,
     RouterModule,
     FormsModule,
+    NgxPaginationModule,
     ReactiveFormsModule,
     ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
   ]

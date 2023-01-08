@@ -13,6 +13,7 @@ export class DatosPacienteComponent implements OnInit{
   pacientes: Pacientes[] = [];
   paciente: any = {};
   filtrarNombre: any = '';
+  p: number = 1;
 
   constructor(public pacientesService: PacientesService){}
   

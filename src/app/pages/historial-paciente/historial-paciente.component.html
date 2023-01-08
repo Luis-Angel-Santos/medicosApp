@@ -17,7 +17,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let historial of historiales | filtrarTabla: filtrarNombre">
+                    <tr *ngFor="let historial of historiales | filtrarTabla: filtrarNombre | paginate: { itemsPerPage: 10, currentPage: p }">
                         <td>{{historial.nompaciente}}</td>                                                                                        
                         <td> 
                             <a (click)="verExpediente(historial.idpaciente)" class="btn btn-success" ><i class="fa fa-eye"></i></a>
@@ -25,7 +25,11 @@
                     </tr>                                        
                 </tbody>
             </table>
-           
+            <pagination-controls 
+                                (pageChange)="p = $event" 
+                                previousLabel="Anterior"
+                                nextLabel="Siguiente">
+            </pagination-controls>
         </div>                     
     </div>
 </div>

@@ -29,7 +29,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let paciente of pacientes | filtrarTabla: filtrarNombre">
+                                    <tr *ngFor="let paciente of pacientes | filtrarTabla: filtrarNombre | paginate: { itemsPerPage: 10, currentPage: p }">
                                         <td>{{paciente.idpaciente}}</td>
                                         <td>{{paciente.nompaciente}}</td>
                                         <td>{{paciente.edadpaciente}}</td>
@@ -40,6 +40,11 @@
                                     </tr>                                        
                                 </tbody>
                             </table>
+                            <pagination-controls 
+                                (pageChange)="p = $event" 
+                                previousLabel="Anterior"
+                                nextLabel="Siguiente">
+                            </pagination-controls>
                         </div>                            
                     </div>
                 </div>
